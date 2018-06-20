@@ -79,8 +79,6 @@ const mainReducer = (state = initialState, action) => {
       return {
         ...state,
         items: arr
-        //TODO
-        // items: action.data.filter(obj => Object.keys(obj).some(key => obj[key].includes(action.text)))
       }
     }
 
