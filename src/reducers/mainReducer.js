@@ -1,7 +1,7 @@
 import {
   FIND_ITEMS,
   GET_ITEMS,
-  SET_CURITEM,
+  SET_CURITEM
 } from '../actions/actionTypes'
 
 const initialState = {

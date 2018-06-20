@@ -1,5 +1,5 @@
 const Urls = {
-  clients: '../db/clients.json'
-};
+  clients: 'https://raw.githubusercontent.com/viktimolog/clientslist/master/src/db/clients.json'
+}
 
-export default Urls;
+export default Urls
