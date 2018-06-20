@@ -8,7 +8,7 @@ const OneItem = ({item, setCurItem}) => (
       size='tiny'
       src={item.general.avatar}/>
     <Item.Content>
-      <Item.Header>{item.general.firstName + ' ' + item.general.lastName}</Item.Header>
+      <Item.Header>{item.general.firstName} {item.general.lastName}</Item.Header>
       <Item.Meta>{item.job.title}</Item.Meta>
     </Item.Content>
   </Item>

@@ -1,5 +1,4 @@
 export const TextConstants = {
-  SERVETNOTRESP: 'Sorry, the server is not responding now! Try later!',
   JOBTITLE: 'Job',
   COMPANYTITLE: 'company: ',
   TITLECLIENT: 'title: ',

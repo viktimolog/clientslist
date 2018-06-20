@@ -6,7 +6,6 @@ import {
 import {
   GetItems
 } from './axiosRequests'
-import { TextConstants } from '../constants/TextConstants'
 
 export const getItems = () => dispatch => {
   GetItems()
@@ -18,7 +17,7 @@ export const getItems = () => dispatch => {
       }
     )
     .catch(err => {
-        alert(TextConstants.SERVETNOTRESP)
+        console.log(err.toString())
         dispatch({
           type: GET_ITEMS,
           payload: []
@@ -44,7 +43,7 @@ export const findItems = text => dispatch => {
       })
     )
     .catch(err => {
-        alert(TextConstants.SERVETNOTRESP)
+        console.log(err.toString())
         dispatch({
           type: GET_ITEMS,
           payload: []
