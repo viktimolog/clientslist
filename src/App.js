@@ -5,8 +5,8 @@ import { Grid, Segment } from 'semantic-ui-react'
 
 const App = () => (
     <Grid columns={2}>
-        <Grid.Column>
-            <Segment basic><ItemsContainer /></Segment>
+        <Grid.Column style={{ width: '30%' }} >
+            <Segment><ItemsContainer /></Segment>
         </Grid.Column>
         <Grid.Column>
             <Segment basic>Lorem ipsum2 dolor sit amet, consectetuer adipiscing elit. Donec odio.</Segment>

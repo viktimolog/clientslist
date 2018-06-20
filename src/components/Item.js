@@ -1,25 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { img } from 'semantic-ui-react'
+import { Item } from 'semantic-ui-react'
 
-const Item = ({item, setCurItem}) => (
-
-<div className="item" onClick={setCurItem}>
-  <div className="image">
-    <img src={item.general.avatar}/>
-  </div>
-  <div className="content">
-    <a className="header">{item.general.firstName + ' '+item.general.lastName}</a>
-    <div className="meta">
-      <span>{item.job.title}</span>
-    </div>
-  </div>
-</div>
+const OneItem = ({item, setCurItem}) => (
+    <Item onClick = {setCurItem}>
+        <Item.Image
+            size='tiny'
+            src={item.general.avatar}/>
+        <Item.Content>
+            <Item.Header>{item.general.firstName + ' ' + item.general.lastName}</Item.Header>
+            <Item.Meta>{item.job.title}</Item.Meta>
+        </Item.Content>
+    </Item>
 )
 
-Item.propTypes = {
+OneItem.propTypes = {
   setCurItem: PropTypes.func.isRequired,
   item: PropTypes.object.isRequired
 }
 
-export default Item
+export default OneItem

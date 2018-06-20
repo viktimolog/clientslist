@@ -14,6 +14,7 @@ export default class Search extends React.Component {
     render() {
         return (
             <Input
+                style={{ width: '100%' }}
                 icon='search'
                 value = {this.state.text}
                 onChange={this.handleTextChange}

@@ -1,17 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Item from './Item'
+import OneItem from './Item'
+import { Item } from 'semantic-ui-react'
 
 const Items = ({items, setCurItem}) => (
-  <div className="ui items">
+    <Item.Group link>
     {items.map(item =>
-      <Item
+      <OneItem
         item={item}
         key={item.id}
         setCurItem={()=>setCurItem(item)}
       />
     )}
-  </div>
+    </Item.Group>
 )
 
 export default Items
