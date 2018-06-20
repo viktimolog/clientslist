@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { img } from 'semantic-ui-react'
 
 const Item = ({item, setCurItem}) => (
 
@@ -8,15 +9,9 @@ const Item = ({item, setCurItem}) => (
     <img src={item.general.avatar}/>
   </div>
   <div className="content">
-    <a className="header">Header</a>
+    <a className="header">{item.general.firstName + ' '+item.general.lastName}</a>
     <div className="meta">
-      <span>Description</span>
-    </div>
-    <div className="description">
-      <p></p>
-    </div>
-    <div className="extra">
-      Additional Details
+      <span>{item.job.title}</span>
     </div>
   </div>
 </div>

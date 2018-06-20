@@ -39,7 +39,7 @@ export const findItems = text => dispatch => {
     .then(res =>
       dispatch({
         type: FIND_ITEMS,
-        payload: res.data,
+        data: res.data,
         text: text
       })
     )
