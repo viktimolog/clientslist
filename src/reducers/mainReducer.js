@@ -1,9 +1,12 @@
 import {
-  GET_ITEMS
- } from '../actions/actionTypes';
+  FIND_ITEMS,
+  GET_ITEMS,
+  SET_CURITEM,
+} from '../actions/actionTypes'
 
 const initialState = {
-   items: []
+   items: [],
+   curItem: false
   };
 
 const mainReducer = (state = initialState, action) => {
@@ -14,6 +17,21 @@ const mainReducer = (state = initialState, action) => {
            items: action.payload
          }
       }
+
+    case SET_CURITEM: {
+      return {
+        ...state,
+        curItem: action.curItem
+      }
+    }
+
+    case FIND_ITEMS: {
+      return {
+        ...state,
+        //TODO create filter for the search
+        // items: action.items.filter...
+      }
+    }
 
     default:
       return state;
