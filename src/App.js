@@ -1,9 +1,9 @@
-import React from 'react'
-import './App.css'
+import React from 'react';
+import './App.css';
 import ItemsContainer from './containers/ItemsContainer'
 
 const App = () => (
-  <ItemsContainer/>
+  <ItemsContainer />
 )
 
 export default App

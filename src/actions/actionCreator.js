@@ -10,11 +10,12 @@ import {TextConstants} from '../constants/TextConstants'
 
 export const getItems = () => dispatch => {
   GetItems()
-    .then(res =>
-      dispatch({
-        type: GET_ITEMS,
-        payload: res.data
-      })
+    .then(res => {
+        dispatch({
+          type: GET_ITEMS,
+          payload: res.data
+        })
+      }
     )
     .catch(err => {
         alert(TextConstants.SERVETNOTRESP)

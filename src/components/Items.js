@@ -3,15 +3,15 @@ import PropTypes from 'prop-types'
 import Item from './Item'
 
 const Items = ({items, setCurItem}) => (
-  <ul>
+  <div className="ui items">
     {items.map(item =>
       <Item
         item={item}
         key={item.id}
-        setCurItem={() => setCurItem(item)}
+        setCurItem={()=>setCurItem(item)}
       />
     )}
-  </ul>
+  </div>
 )
 
 export default Items

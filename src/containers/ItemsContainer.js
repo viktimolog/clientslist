@@ -2,16 +2,26 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Items from '../components/Items'
-import { setCurItem } from '../actions/actionCreator'
+import { getItems, setCurItem } from '../actions/actionCreator'
 
-const ItemsContainer = ({ items, setCurItem }) => (
-  <Items
-    items = {items}
-    setCurItem={setCurItem}/>)
+class ItemsContainer extends React.Component {
+
+  componentDidMount () {
+    this.props.getItems()
+  }
+
+  render () {
+    return (
+      <Items
+        items={this.props.items}
+        setCurItem={this.props.setCurItem}/>)
+  }
+}
 
 ItemsContainer.propTypes = {
   items: PropTypes.array.isRequired,
-  setCurItem: PropTypes.func.isRequired
+  setCurItem: PropTypes.func.isRequired,
+  getItems: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -19,8 +29,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-  setCurItem
+  setCurItem,
+  getItems
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ItemsContainer)
 
