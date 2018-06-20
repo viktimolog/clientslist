@@ -6,7 +6,7 @@ import {
 import {
   GetItems
 } from './axiosRequests'
-import {TextConstants} from '../constants/TextConstants'
+import { TextConstants } from '../constants/TextConstants'
 
 export const getItems = () => dispatch => {
   GetItems()

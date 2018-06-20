@@ -4,15 +4,15 @@ import OneItem from './Item'
 import { Item } from 'semantic-ui-react'
 
 const Items = ({items, setCurItem}) => (
-    <Item.Group link>
+  <Item.Group link>
     {items.map(item =>
       <OneItem
         item={item}
         key={item.id}
-        setCurItem={()=>setCurItem(item)}
+        setCurItem={() => setCurItem(item)}
       />
     )}
-    </Item.Group>
+  </Item.Group>
 )
 
 export default Items
