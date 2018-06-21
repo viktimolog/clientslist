@@ -37,7 +37,7 @@ const mainReducer = (state = initialState, action) => {
         for (let k in obj) {
           const curObj = obj[k]
           if (k === 'general') {
-            if ((Object.values(curObj).slice(0, -1)).join(' ').toLowerCase().includes(action.text.toLowerCase())) {
+            if (Object.values(curObj).slice(0, -1).join(' ').toLowerCase().includes(action.text.toLowerCase())) {
               arr.push(obj)
               break
             }
