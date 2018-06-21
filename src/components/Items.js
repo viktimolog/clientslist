@@ -7,8 +7,8 @@ const Items = ({items, setCurItem}) => (
   <Item.Group link>
     {items.map(item =>
       <OneItem
+        key={Math.random()}
         item={item}
-        key={item.id}
         setCurItem={() => setCurItem(item)}
       />
     )}

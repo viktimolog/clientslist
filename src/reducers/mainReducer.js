@@ -32,26 +32,21 @@ const mainReducer = (state = initialState, action) => {
           items: action.data
         }
 
-      const searchText = obj => {
-        for (let k in obj) {
-          const i = obj[k]
-          if (typeof i === 'string' && ~i.toLowerCase().indexOf(action.text.toLowerCase()) && k !== 'avatar') {
-            return true
-          }
-        }
-        return false
-      }
-
       let arr = []
-      for (let i = 0; i < action.data.length; i++) {
-        for (let k in action.data[i]) {
-          const j = action.data[i][k]
-          if (searchText(j)) {
-            arr.push(action.data[i])
+      action.data.forEach(obj => {
+        for (let k in obj) {
+          const curObj = obj[k]
+          if (k === 'general') {
+            if (~(Object.values(curObj).slice(0, -1)).join(' ').toLowerCase().indexOf(action.text.toLowerCase())) {
+              arr.push(obj)
+              break
+            }
+          } else if (~Object.values(curObj).join(' ').toLowerCase().indexOf(action.text.toLowerCase())) {
+            arr.push(obj)
             break
           }
         }
-      }
+      })
 
       return {
         ...state,

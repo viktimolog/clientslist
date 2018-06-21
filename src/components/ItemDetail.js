@@ -38,7 +38,7 @@ const ItemDetail = ({item}) => {
 }
 
 ItemDetail.propTypes = {
-  curItem: PropTypes.object.isRequired
+  curItem: PropTypes.object
 }
 
 export default ItemDetail
