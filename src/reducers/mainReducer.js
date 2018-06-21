@@ -32,47 +32,24 @@ const mainReducer = (state = initialState, action) => {
           items: action.data
         }
 
+      const searchText = obj => {
+        for (let k in obj) {
+          const i = obj[k]
+          if (typeof i === 'string' && ~i.toLowerCase().indexOf(action.text.toLowerCase()) && k !== 'avatar') {
+            return true
+          }
+        }
+        return false
+      }
+
       let arr = []
       for (let i = 0; i < action.data.length; i++) {
-        if (action.data[i].general.firstName.toLowerCase().includes(action.text.toLowerCase())) {
-          arr.push(action.data[i])
-          continue
-        }
-        if (action.data[i].general.lastName.toLowerCase().includes(action.text.toLowerCase())) {
-          arr.push(action.data[i])
-          continue
-        }
-        if (action.data[i].job.company.toLowerCase().includes(action.text.toLowerCase())) {
-          arr.push(action.data[i])
-          continue
-        }
-        if (action.data[i].job.title.toLowerCase().includes(action.text.toLowerCase())) {
-          arr.push(action.data[i])
-          continue
-        }
-        if (action.data[i].contact.email.toLowerCase().includes(action.text.toLowerCase())) {
-          arr.push(action.data[i])
-          continue
-        }
-        if (action.data[i].contact.phone.toLowerCase().includes(action.text.toLowerCase())) {
-          arr.push(action.data[i])
-          continue
-        }
-        if (action.data[i].address.street.toLowerCase().includes(action.text.toLowerCase())) {
-          arr.push(action.data[i])
-          continue
-        }
-        if (action.data[i].address.city.toLowerCase().includes(action.text.toLowerCase())) {
-          arr.push(action.data[i])
-          continue
-        }
-        if (action.data[i].address.zipCode.toLowerCase().includes(action.text.toLowerCase())) {
-          arr.push(action.data[i])
-          continue
-        }
-        if (action.data[i].address.country.toLowerCase().includes(action.text.toLowerCase())) {
-          arr.push(action.data[i])
-          continue
+        for (let k in action.data[i]) {
+          const j = action.data[i][k]
+          if (searchText(j)) {
+            arr.push(action.data[i])
+            break
+          }
         }
       }
 
